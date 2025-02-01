@@ -7,9 +7,10 @@
 }
 
 body {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #050a0f; /* Почти черный синий фон */
+    color: #edfdfd
 }
+
 
 .container {
     max-width: 1200px;
@@ -19,14 +20,15 @@ body {
 
 /* Шапка */
 header {
-    background-color: #141414;
-    padding: 15px 20px;
+    background-color: #080f16; /* Еще более темный синий для шапки */
+
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
 }
 
 .nav-links {
@@ -35,34 +37,70 @@ header {
 }
 
 .nav-links a {
-    color: #e0e0e0;
+    color: #c7c0c0; /* Очень светлый серый для текста */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #bb86fc;
+    color: #4d5e72; /* Темно-серо-голубой акцент */
+}
+
+.nav-linkitch {
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 1.1rem;
+    color: #fff; /* Білий колір тексту */
+    background-color: #254d45; /* Темно-серо-голубий фон */
+    border: 2px solid #529f69; /* Така ж кольорова межа */
+    border-radius: 10px;
+    text-decoration: none; /* Видаляємо підкреслення */
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Плавна анімація для змін */
 }
 
 /* Главная секция */
 .hero {
+    position: relative; /* Необходимо для позиционирования псевдоэлемента */
     padding: 8rem 0;
-    min-height: 80vh;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #1e1e1e;
+    align-items: flex-start; /* Выравнивание текста по левому краю */
+    justify-content: left;
+    text-align: left; /* Текст слева */
+    background-image: url('background1.jpg');
+    background-size: cover; /* Чтобы фон занимал всю область */
+    background-position: center; /* Центрирование фона */
+    overflow: hidden; /* Чтобы псевдоэлемент не выходил за границы */
+}
+
+/* Псевдоэлемент для затемнения фона */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнение с прозрачностью 50% */
+    z-index: 1; /* Псевдоэлемент выше фона, но ниже контента */
+}
+
+/* Контент внутри .hero */
+.hero > * {
+    position: relative; /* Поднимаем контент выше псевдоэлемента */
+    z-index: 2; /* Контент должен быть выше затемнения */
 }
 
 .hero-content {
+    margin: 0;
     max-width: 600px;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #bb86fc;
+    color: #e5dab7; /* Темно-серо-голубой для заголовка */
 }
 
 /* Секция новостей */
@@ -75,10 +113,10 @@ header {
 
 .main-news,
 .news-tile {
-    background: #2c2c2c;
+    background: #0c151e; /* Очень темный синий для новостей */
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid #3a3a3a;
+    border: 1px solid #1b2637; /* Почти черная граница */
 }
 
 .main-news img,
@@ -105,6 +143,24 @@ header {
     flex-direction: column;
     gap: 1rem;
 }
+/* Стилізація кнопки */
+.view-all-btn {
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 1.1rem;
+    color: #fff; /* Білий колір тексту */
+    background-color: #2b2843; /* Темно-серо-голубий фон */
+    border: 2px solid #4d5272; /* Така ж кольорова межа */
+    border-radius: 10px;
+    text-decoration: none; /* Видаляємо підкреслення */
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Плавна анімація для змін */
+}
+
+/* Ефект активної кнопки (клік) */
+.view-all-btn:active {
+    transform: scale(0.98); /* Зменшення кнопки при натисканні */
+}
 
 /* Секция игр */
 .games-grid {
@@ -118,14 +174,14 @@ header {
 }
 
 .game-tile {
-    background: #2c2c2c;
+    background: #0c151e; /* Очень темный синий фон */
     border-radius: 15px;
     text-align: center;
     min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #3a3a3a;
+    border: 1px solid #1b2637; /* Почти черная граница */
     max-width: 370px;
     margin: 0 auto;
 }
@@ -146,17 +202,20 @@ header {
 }
 
 .social-links a {
-    color: #e0e0e0;
+    color: #8c8c8c; /* Очень светлый серый для иконок */
     font-size: 24px;
     transition: color 0.3s;
 }
 
+h1, h2, h3, p {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7); /* Тень для текста */
+}
 .social-links a:hover {
-    color: #bb86fc;
+    color: #4d5e72; /* Темно-серо-голубой для акцента */
 }
 
 footer {
-    background: #1e1e1e;
+    background: #0a121c; /* Еще более темный синий для футера */
     text-align: center;
     padding: 20px;
 }
@@ -220,3 +279,4 @@ footer {
         gap: 0.5rem;
     }
 }
+
