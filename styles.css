@@ -15,7 +15,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 60px;
 }
 
 /* Шапка */
@@ -28,7 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
 }
 
 .nav-links {
@@ -143,26 +143,9 @@ header {
     flex-direction: column;
     gap: 1rem;
 }
-/* Стилізація кнопки */
-.view-all-btn {
-    display: inline-block;
-    padding: 5px 20px;
-    font-size: 1.1rem;
-    color: #fff; /* Білий колір тексту */
-    background-color: #2b2843; /* Темно-серо-голубий фон */
-    border: 2px solid #4d5272; /* Така ж кольорова межа */
-    border-radius: 10px;
-    text-decoration: none; /* Видаляємо підкреслення */
-    text-align: center;
-    transition: all 0.3s ease-in-out; /* Плавна анімація для змін */
-}
 
-/* Ефект активної кнопки (клік) */
-.view-all-btn:active {
-    transform: scale(0.98); /* Зменшення кнопки при натисканні */
-}
 
-/* Секция игр */
+/* Секція ігор */
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -174,16 +157,17 @@ header {
 }
 
 .game-tile {
-    background: #0c151e; /* Очень темный синий фон */
+    background: #0c151e; /* Дуже темний синій фон */
     border-radius: 15px;
     text-align: center;
     min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #1b2637; /* Почти черная граница */
+    border: 1px solid #1b2637; /* Майже чорна границя */
     max-width: 370px;
     margin: 0 auto;
+    overflow: hidden; /* Щоб зображення не виходило за межі */
 }
 
 .game-tile img {
@@ -191,6 +175,35 @@ header {
     height: 220px;
     object-fit: cover;
     border-radius: 15px 15px 0 0;
+}
+
+/* Нова панелька */
+.game-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #1b2637; /* Темний фон для панельки */
+    border-top: 1px solid #2a3a50; /* Границя зверху */
+}
+
+.game-status {
+    color: #a0aec0; /* Світлий колір для тексту статусу */
+    font-size: 14px;
+}
+
+.view-all-btn {
+    background: #2c5282; /* Синій колір для кнопки */
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.view-all-btn:hover {
+    background: #1a365d; /* Темніший синій при наведенні */
 }
 
 /* Соцсети и футер */
@@ -279,4 +292,3 @@ footer {
         gap: 0.5rem;
     }
 }
-
